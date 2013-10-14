@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>jQuery Mobile</title>
+<meta charset="UTF-8" />
+<meta name="viewport"
+	content="width=device-width,
+		initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<link href="/ThirdApp/lib/jquery/jquery.mobile-1.3.2.css"
+	rel="stylesheet" type="text/css" />
+<script src="/ThirdApp/lib/jquery/jquery-1.9.1.js"></script>
+<script src="/ThirdApp/lib/jquery/jquery.mobile-1.3.2.js"></script>
+
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header">
+			<h1>ADD LUNCH MENU</h1>
+			<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+		</div>
+
+		<div data-role="content">
+			
+			<form id="addMenu" method="post" action="/ThirdApp/jsp/writeMenu.jsp" 
+				enctype="multipart/form-data" data-ajax="false">
+				<div data-role="fieldcontain">
+					<label for="lunch_name">Lunch Name:</label> <input id="lunch_name"
+						type="text" name="lunch_name" />
+				</div>
+
+				<div data-role="fieldcontain">
+					<label for="lunch_date">Lunch Date:</label> <input type="date"
+						name="lunch_date" id="lunch_date" value="" />
+				</div>
+				<div data-role="fieldcontain">
+					<label for="lunch_date">Lunch Image:</label> <input type="file"
+						name="lunch_image" accept="image/*" capture>
+				</div>
+				<div id="preview"></div>
+				<input type="submit" name="submit" value="Upload" />
+				<!-- <label for="file">Filename:</label>
+					<input type="file" name="file" id="file">
+					
+					<input type="submit" name="submit" value="Submit"> -->
+			</form>
+
+			</form>
+
+		</div>
+		<!-- 
+		<script>
+		$("#lunch_name").val("");
+		$("#lunch_date").val("");
+		$("#addMenu").each(function(){
+			this.reset();
+		});
+		$("#addMenu").submit(function(){
+			if($("#lunch_name").val()==""){
+				alert("lunch_name null");
+			}else{
+				alert("handler for addmnucalled");	
+			}
+			
+		})
+		
+	</script>
+	 -->
+
+	</div>
+	
+
+	
+
+</body>
+</html>
