@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>jQuery Mobile</title>
-<meta charset="UTF-8" />
+<meta  charset="UTF-8" />
 <meta name="viewport"
 	content="width=device-width,
 		initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
@@ -18,12 +18,20 @@
 		<div data-role="header">
 			<h1>ADD DELIVERY CONTACT</h1>
 			<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+			<a href="/ThirdApp/view/main.html" data-icon="home">Home</a>
 		</div>
 
 		<div data-role="content">
-			
+			<script>
+				$("#delivery_name").val("");
+				$("#delivery_number").val("");
+				$("#addMenu").each(function() {
+					this.reset();
+				});
+				
+			</script>
 			<form id="addMenu" method="post" action="/ThirdApp/jsp/writeDelivery.jsp" 
-				enctype="multipart/form-data" data-ajax="false">
+				enctype="multipart/form-data" data-ajax="false" accept-charset="UTF-8">
 				<div data-role="fieldcontain">
 					<label for="delivery_name">Delivery Store Name :</label> <input id="delivery_name"
 						type="text" name="delivery_name" />
@@ -36,6 +44,10 @@
 				<div data-role="fieldcontain">
 					<label for="delivery_number">Delivery Store Image:</label> <input type="file"
 						name="delivery_image" accept="image/*" capture>
+				</div>
+				<div data-role="fieldcontain">
+					<label for="delivery_number">Delivery Menu Image:</label> <input type="file"
+						name="delivery_menu" accept="image/*" capture>
 				</div>
 				<div id="preview"></div>
 				<input type="submit" name="submit" value="Upload" />

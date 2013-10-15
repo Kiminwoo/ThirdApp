@@ -18,11 +18,20 @@
 		<div data-role="header">
 			<h1>ADD LUNCH MENU</h1>
 			<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+			<a href="/ThirdApp/view/main.html" data-icon="home">Home</a>
 		</div>
 
 		<div data-role="content">
-			
-			<form id="addMenu" method="post" action="/ThirdApp/jsp/writeMenu.jsp" 
+
+			<script>
+				$("#lunch_name").val("");
+				$("#lunch_date").val("");
+				$("#addMenu").each(function() {
+					this.reset();
+				});
+				
+			</script>
+			<form id="addMenu" method="post" action="/ThirdApp/jsp/writeMenu.jsp"
 				enctype="multipart/form-data" data-ajax="false">
 				<div data-role="fieldcontain">
 					<label for="lunch_name">Lunch Name:</label> <input id="lunch_name"
@@ -48,29 +57,14 @@
 			</form>
 
 		</div>
-		<!-- 
-		<script>
-		$("#lunch_name").val("");
-		$("#lunch_date").val("");
-		$("#addMenu").each(function(){
-			this.reset();
-		});
-		$("#addMenu").submit(function(){
-			if($("#lunch_name").val()==""){
-				alert("lunch_name null");
-			}else{
-				alert("handler for addmnucalled");	
-			}
-			
-		})
+
 		
-	</script>
-	 -->
+
 
 	</div>
-	
 
-	
+
+
 
 </body>
 </html>

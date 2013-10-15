@@ -47,6 +47,7 @@ try {
 	<div data-role="header">
 		<h1>DELIVERY STORE PAGE</h1>
 		<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+		<a href="/ThirdApp/view/main.html" data-icon="home">Home</a>
 	</div>
 
 	<div data-role="content">
@@ -62,13 +63,14 @@ try {
 				String deliveryNumber = rs.getString("delivery_number");
 				String id = rs.getString("id");
 				out.print("<li>");
+				out.print("<a href='/ThirdApp/jsp/deliveryDetail.jsp?id="+id+"'>");
 				out.print("<img src='/ThirdApp/jsp/deliveryImage.jsp?id="+id+"'/>");
 				
-				out.print(deliveryName + " " + deliveryNumber);
+				out.print(deliveryName + " " + deliveryNumber); 
 				//out.print("<a href='#' data-role='button' data-inline='true' data-mini='true'>메뉴판</a>");
 				//out.print("<a href='#' data-role='button' data-inline='true' data-mini='true'>전화걸기</a>");
 
-				
+				out.print("</a>");
 
 
 				out.print("</li>");

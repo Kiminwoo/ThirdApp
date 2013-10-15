@@ -47,6 +47,7 @@ try {
 	<div data-role="header">
 		<h1>MENU PAGE</h1>
 		<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+		<a href="/ThirdApp/view/main.html" data-icon="home">Home</a>
 	</div>
 
 	<div data-role="content">

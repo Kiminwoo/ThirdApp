@@ -12,6 +12,8 @@
 <%! Statement st= null; %>
 
 <%
+request.setCharacterEncoding("UTF-8");
+response.setCharacterEncoding("UTF-8");
 String lunchName = null;
 String lunchDate = null;
 InputStream lunchImage = null;
@@ -41,7 +43,7 @@ while (iter.hasNext()) {
 
     if (item.isFormField()) {
     	    String name = item.getFieldName();
-    	  	String value = item.getString();
+    	  	String value = item.getString("UTF-8");
     	  	if(name.equals("lunch_name"))
     	  		lunchName = value;
     	  	else if(name.equals("lunch_date"))
