@@ -24,28 +24,40 @@
 		<div data-role="content">
 
 			<script>
+			
+			$(function(){
+				
+				
 				$("#lunch_name").val("");
 				$("#lunch_date").val("");
 				$("#addMenu").each(function() {
 					this.reset();
 				});
+			});
+				
 				
 			</script>
+			
 			<form id="addMenu" method="post" action="/ThirdApp/jsp/writeMenu.jsp"
 				enctype="multipart/form-data" data-ajax="false">
-				<div data-role="fieldcontain">
-					<label for="lunch_name">Lunch Name:</label> <input id="lunch_name"
-						type="text" name="lunch_name" />
-				</div>
-
+				
 				<div data-role="fieldcontain">
 					<label for="lunch_date">Lunch Date:</label> <input type="date"
 						name="lunch_date" id="lunch_date" value="" />
 				</div>
 				<div data-role="fieldcontain">
-					<label for="lunch_date">Lunch Image:</label> <input type="file"
-						name="lunch_image" accept="image/*" capture>
+					<label for="lunch_name">Lunch Name:</label> 
+
+					<textarea name="lunch_name" id="lunch_name"></textarea>
 				</div>
+
+				<!-- 
+				<div data-role="fieldcontain">
+					<label for="lunch_date">Lunch Image:</label> 
+					<input type="file" name="lunch_image" accept="image/*" capture>
+
+				</div>
+				 -->
 				<div id="preview"></div>
 				<input type="submit" name="submit" value="Upload" />
 				<!-- <label for="file">Filename:</label>
@@ -54,7 +66,7 @@
 					<input type="submit" name="submit" value="Submit"> -->
 			</form>
 
-			</form>
+			
 
 		</div>
 

@@ -44,8 +44,13 @@ while (iter.hasNext()) {
     if (item.isFormField()) {
     	    String name = item.getFieldName();
     	  	String value = item.getString("UTF-8");
-    	  	if(name.equals("lunch_name"))
-    	  		lunchName = value;
+    	  	if(name.equals("lunch_name")){
+    	  		
+    	  		value = value.replace("\r\n", "<br/>");
+	   	  		lunchName = value;
+    	  		//out.print("VALUE :::::::::" + value);
+    	  	}
+    	  		
     	  	else if(name.equals("lunch_date"))
     	  		lunchDate = value;
     	    
@@ -75,16 +80,19 @@ try{
      Statement stSetLimit = con.createStatement();
      stSetLimit.execute(querySetLimit);
      
-	String sql = "insert into lunch_menu(lunch_image,lunch_name,lunch_date) values(?,?,?)";
+//	String sql = "insert into lunch_menu(lunch_image,lunch_name,lunch_date) values(?,?,?)";
+String sql = "insert into lunch_menu(lunch_image,lunch_name,lunch_date) values(null,?,?)";
 	PreparedStatement statement = con.prepareStatement(sql);
+	/*
 	if (lunchImage != null) {
 	    // fetches input stream of the upload file for the blob column
 	    out.print("SIZE :::::::::::::::"+(int)repository.length());
 	    
 	    statement.setBinaryStream(1, lunchImage,(int)imageSize);
 	}
-	statement.setString(2, lunchName);
-	statement.setString(3, lunchDate);
+	*/
+	statement.setString(1, lunchName);
+	statement.setString(2, lunchDate);
 	 
 
 
@@ -106,8 +114,8 @@ try{
         }
     }
     //this.getServletContext().getRequestDispatcher("/jsp/menu.jsp").forward(request,response);
-    String url = response.encodeRedirectUrl("/ThirdApp/jsp/menu.jsp");
-    response.sendRedirect(url);
+    //String url = response.encodeRedirectUrl("/ThirdApp/jsp/menu.jsp");
+   // response.sendRedirect(url);
   
 }
 
@@ -116,3 +124,5 @@ try{
 
 
 %>
+
+<jsp:forward page="/jsp/menu.jsp"></jsp:forward>

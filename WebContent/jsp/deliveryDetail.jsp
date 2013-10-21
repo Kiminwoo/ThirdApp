@@ -86,7 +86,7 @@
 						//e.printStackTrace();
 					}
 				} catch (ClassNotFoundException ce) {
-					out.println(ce);
+					//out.println(ce);
 				}
 			%>
 

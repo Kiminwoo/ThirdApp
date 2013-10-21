@@ -51,9 +51,10 @@
 			String name = item.getFieldName();
 			String value = item.getString("UTF-8");
 			
-			if (name.equals("delivery_name"))
+			if (name.equals("delivery_name")){
+
 				deliveryName = value;
-			
+			}			
 			else if (name.equals("delivery_number"))
 				deliveryNumber = value;
 
@@ -137,9 +138,10 @@
 			}
 		}
 		//this.getServletContext().getRequestDispatcher("/jsp/menu.jsp").forward(request,response);
-		String url = response
-				.encodeRedirectUrl("/ThirdApp/jsp/delivery.jsp");
-		response.sendRedirect(url);
+//		String url = response.encodeRedirectUrl("/ThirdApp/jsp/delivery.jsp");
+//		response.sendRedirect(url);
 
 	}
 %>
+
+<jsp:forward page="/jsp/delivery.jsp"></jsp:forward>

@@ -63,9 +63,9 @@ try {
 				String name = rs.getString("lunch_name");
 				String id = rs.getString("id");
 				out.print("<li>");
-				out.print("<img src='/ThirdApp/jsp/image.jsp?id="+id+"'/>");
+				//out.print("<img src='/ThirdApp/jsp/image.jsp?id="+id+"'/>");
 				
-				out.print(date + " " + name);
+				out.print(date + "<br/>" + name);
 
 
 

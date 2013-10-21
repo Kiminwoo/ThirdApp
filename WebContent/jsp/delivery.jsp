@@ -78,7 +78,9 @@ try {
 			} catch (SQLException e) {
 			//e.printStackTrace();
 			}
-			}catch(ClassNotFoundException ce){out.println(ce);}
+			}catch(ClassNotFoundException ce){
+				//out.println(ce);
+				}
 			%>
 			<a href="/ThirdApp/view/writeDelivery.html" data-role="button">ADD DELIVERY CONTACT</a>
 			

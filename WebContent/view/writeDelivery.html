@@ -17,17 +17,20 @@
 	<div data-role="page">
 		<div data-role="header">
 			<h1>ADD DELIVERY CONTACT</h1>
-			<a href="#" data-rel="back" data-icon="arrow-l">Back</a>
+			<a href="#" data-rel="back" data-direction="reverse" data-icon="arrow-l">Back</a>
 			<a href="/ThirdApp/view/main.html" data-icon="home">Home</a>
 		</div>
 
 		<div data-role="content">
 			<script>
-				$("#delivery_name").val("");
-				$("#delivery_number").val("");
-				$("#addMenu").each(function() {
-					this.reset();
+				$(function(){
+					$("#delivery_name").val("");
+					$("#delivery_number").val("");
+					$("#addMenu").each(function() {
+						this.reset();
+					});
 				});
+				
 				
 			</script>
 			<form id="addMenu" method="post" action="/ThirdApp/jsp/writeDelivery.jsp" 
@@ -45,6 +48,7 @@
 					<label for="delivery_number">Delivery Store Image:</label> <input type="file"
 						name="delivery_image" accept="image/*" capture>
 				</div>
+
 				<div data-role="fieldcontain">
 					<label for="delivery_number">Delivery Menu Image:</label> <input type="file"
 						name="delivery_menu" accept="image/*" capture>
