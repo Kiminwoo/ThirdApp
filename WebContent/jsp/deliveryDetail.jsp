@@ -56,7 +56,7 @@
 			<script src="/ThirdApp/lib/star-rating/jquery.MetaData.js"></script>
 			<script src="/ThirdApp/lib/star-rating/jquery.rating.js"></script>
 			<script src="/ThirdApp/lib/star-rating/jquery.rating.pack.js"></script>
-
+			
 
 			<!--
 			<li><img src="/FirstApp/assets/img/1.jpg" />2013-10-08 똥맛카레</li>
